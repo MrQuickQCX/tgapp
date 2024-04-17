@@ -50,6 +50,8 @@
     </div>
    </body>
    <script>
+      var retrycounter = 0;
+   
       let tg = window.Telegram.WebApp; //получаем объект webapp телеграма 
 
       tg.expand(); //расширяем на все окно
@@ -61,7 +63,12 @@
       tg.MainButton.show()
 
       Telegram.WebApp.onEvent('mainButtonClicked', function(){
-      	tg.HapticFeedback.notificationOccurred("error");
+         if (retrycounter < 3) {
+            retrycounter++;
+      	    tg.HapticFeedback.notificationOccurred("error");
+         } else {
+            tg.showAlert("Превышено количество повторов");
+         }
       });
    </script>
 </html>
