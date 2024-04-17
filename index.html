@@ -20,7 +20,9 @@
    <script>
       let tg = window.Telegram.WebApp; //получаем объект webapp телеграма 
 
-      tg.expand(); //расширяем на все окно  
+      tg.expand(); //расширяем на все окно
+
+      tg.showAlert("Извините, но у вас недостаточно прав для использования приложения");
       
       tg.MainButton.text = "Закрыть"; //изменяем текст кнопки 
       tg.MainButton.textColor = "#FFFFFF"; //изменяем цвет текста кнопки
