@@ -61,7 +61,7 @@
       tg.MainButton.show()
 
       Telegram.WebApp.onEvent('mainButtonClicked', function(){
-      	tg.showAlert("День прошёл, число сменилось, ни*уя не изменилось :)");
+      	tg.HapticFeedback.notificationOccurred("error");
       });
    </script>
 </html>
